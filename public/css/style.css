@@ -32,7 +32,15 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
 }
 
 /* hero image */
-
+.hero-image{
+  width:280px;              
+  height:auto;
+  display:block;
+  object-fit:contain;
+  filter:brightness(0.95);
+  border-radius:6px;
+  box-shadow:0 18px 60px rgba(0,0,0,0.6);
+}
 
 /* hero title (simple, large) */
 .hero-title{
@@ -202,75 +210,67 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
   .counter-number .count{font-size:40px}
   .img-col img{max-width:280px}
 }
-/* ---------- MOBILE FIXES FOR HERO (IMPROVED) ---------- */
+/* ---------- MOBILE LAYOUT FIXES (side-by-side scaling) ---------- */
 @media (max-width: 600px) {
-
-  /* keep same black hero background but center everything */
+  
+  /* HERO SECTION */
   .hero {
-    padding: 30px 14px 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-height: 90vh;            /* fill most of the screen vertically */
+    padding: 20px 12px;          /* tighter padding for mobile */
   }
 
-  /* image centered, not cut */
-  .hero-left {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  .hero-inner {
+    flex-direction: column;      /* stack image + title */
+    align-items: center;
+    justify-content: center;     /* vertical centering */
+    gap: 16px;
   }
 
   .hero-image {
-    max-width: 250px;
-    width: 75%;
+    width: 70%;                  /* scale image down */
+    max-width: 240px;
     height: auto;
     object-fit: contain;
-
-    /* soft fade-in */
-    opacity: 0;
-    transform: translateY(10px);
-    animation: heroFade 0.8s ease-out forwards;
+    display: block;
+    margin: 0 auto;              /* center image */
   }
 
-  /* title fully visible and beautiful */
   .hero-title {
-    margin-top: 18px;
-    width: 100%;
     text-align: center;
-    padding: 0 8px;
+    font-size: 28px;             /* scale title down */
+    line-height: 1.2;
   }
 
-  .hero-title h1 {
-    font-size: 34px;           /* larger for mobile */
-    line-height: 1.22;
-    margin-bottom: 6px;
-    word-break: break-word;
-
-    /* fade in slightly after image */
-    opacity: 0;
-    animation: titleFade 1s ease-out forwards;
-    animation-delay: 0.2s;
+  /* TWO-COL SECTIONS (Art, About) */
+  .two-col {
+    display: flex;
+    flex-direction: row;          /* keep side-by-side */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;                    /* spacing between image and text */
   }
 
-  .hero-title h2 {
-    font-size: 18px;
-    opacity: 0.9;
+  .col {
+    flex: 1 1 50%;                /* each column takes half width, can shrink */
   }
 
-}
-
-/* fade animations */
-@keyframes heroFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .img-col img {
+    width: 100%;                  /* fill column width */
+    max-width: 140px;             /* scale down for mobile */
+    height: auto;
   }
-}
 
-@keyframes titleFade {
-  to {
-    opacity: 1;
-    transform: none;
+  .text-col h2 {
+    font-size: 20px;              /* scale heading */
+  }
+
+  .text-col p {
+    font-size: 14px;              /* scale paragraph */
+    line-height: 1.5;
+  }
+
+  /* COUNTERS */
+  .counters {
+    gap: 20px;                    /* tighter spacing for mobile */
   }
 }
