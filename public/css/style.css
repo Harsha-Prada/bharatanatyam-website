@@ -213,14 +213,14 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
 /* --- MOBILE HERO SHORTEN + ABOUT IMAGE ORDER FIX --- */
 @media (max-width: 600px) {
 
-  /* HERO — shorten vertically but keep layout */
+  /* HERO — make vertically shorter */
   .hero {
-    min-height: 60vh !important;
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
+    min-height: 48vh !important;     /* smaller than before */
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
   }
 
-  /* ensure hero stays side-by-side */
+  /* keep hero left-image + right-title layout */
   .hero-inner {
     flex-direction: row !important;
     align-items: center !important;
@@ -229,18 +229,19 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
   }
 
   .hero-image {
-    width: 42% !important;
-    max-width: 170px !important;
+    width: 40% !important;
+    max-width: 160px !important;
   }
 
+  /* HERO TITLE – slightly larger */
   .hero-title {
     width: 50% !important;
-    font-size: 22px !important;
-    line-height: 1.2 !important;
+    font-size: 25px !important;   /* increased */
+    line-height: 1.25 !important;
   }
 
 
-  /* --- ABOUT SECTION: enforce correct order --- */
+  /* --- ABOUT SECTION: ORDER FIX (TITLE → PARA → IMAGE) --- */
   .about-section .section-content {
     display: flex !important;
     flex-direction: column !important;
@@ -262,9 +263,9 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
   }
 
   .about-section img {
-    order: 3 !important;
-    width: 90% !important;
-    max-width: 420px !important;
+    order: 3 !important;           /* ensures image BELOW para */
+    width: 92% !important;
+    max-width: 430px !important;
     border-radius: 10px;
   }
 }
