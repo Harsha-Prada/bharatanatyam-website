@@ -211,37 +211,39 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
   .img-col img{max-width:280px}
 }
 /* ---------- FINAL MOBILE FIXES (max-width: 600px) ---------- */
+/* ---------- HERO SECTION MOBILE ADJUSTMENTS (max-width: 600px) ---------- */
 @media (max-width: 600px) {
 
-  /* --- HERO SECTION --- */
   .hero {
-    min-height: 30vh !important;      /* shorter hero */
-    padding: 10px 16px !important;
+    min-height: 28vh !important;      /* even shorter hero */
+    padding-top: 5px !important;      /* reduced top padding */
+    padding-bottom: 5px !important;   /* reduced bottom padding */
   }
 
   .hero-inner {
     flex-direction: row !important;    /* image left, title right */
-    align-items: center !important;
+    align-items: center !important;    /* vertical centering */
     justify-content: flex-start !important;
     gap: 12px !important;
     width: 100%;
   }
 
   .hero-image {
-    width: 35% !important;            /* smaller image */
+    width: 35% !important;             /* image size */
     max-width: 130px !important;
     height: auto !important;
     object-fit: contain !important;
   }
 
   .hero-title {
-    width: 60% !important;            /* title on right */
+    width: 60% !important;
     font-size: 24px !important;
     line-height: 1.2 !important;
     text-align: left !important;
-    white-space: normal !important;   /* natural wrapping */
+    white-space: normal !important;   /* allow natural wrapping */
     margin: 0 !important;
   }
+
 
   /* --- ART + ABOUT TITLES LEFT ALIGNED --- */
   .art-section h2,
