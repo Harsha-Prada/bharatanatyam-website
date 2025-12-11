@@ -216,8 +216,8 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
 
   .hero {
     min-height: 28vh !important;      /* even shorter hero */
-    padding-top: 3.5px !important;      /* reduced top padding */
-    padding-bottom: 3.5px !important;   /* reduced bottom padding */
+    padding-top: 2px !important;      /* reduced top padding */
+    padding-bottom: 2.5px !important;   /* reduced bottom padding */
   }
 
   .hero-inner {
