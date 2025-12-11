@@ -235,15 +235,11 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
 
   .hero-title {
     width: 50% !important;
-    font-size: 25px !important;
+    font-size: 22px !important;
     line-height: 1.2 !important;
   }
 
-@media (max-width: 600px) {
-  .art-section h2 {
-    font-size: 1.6rem;
-  }
-}
+
   /* --- ABOUT SECTION: enforce correct order --- */
   .about-section .section-content {
     display: flex !important;
@@ -256,7 +252,7 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
 
   .about-section h2 { 
     order: 1 !important; 
-    font-size: 1.6rem !important;
+    font-size: 1.4rem !important;
   }
 
   .about-section p { 
@@ -271,15 +267,4 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
     max-width: 420px !important;
     border-radius: 10px;
   }
-  @media (max-width: 600px) {
-  .statement-section h2 {
-    text-align: center !important;
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    font-size: 22px;      /* adjust size for mobile */
-    line-height: 1.3;
-  }
-}
-
 }
