@@ -210,77 +210,74 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
   .counter-number .count{font-size:40px}
   .img-col img{max-width:280px}
 }
-/* ---------------- FINAL MOBILE OVERRIDES (paste at EOF of style.css) ---------------- */
+/* ---------- MOBILE FIXES (max 600px) ---------- */
 @media (max-width: 600px) {
 
-  /* HERO — shorter vertical height but keep side-by-side layout */
+  /* --- HERO: keep side-by-side but shorter --- */
   .hero {
-    min-height: 45vh !important;         /* shorter hero */
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
+    min-height: 55vh !important;
+    padding: 20px 0 !important;
   }
 
   .hero-inner {
-    display: flex !important;
-    flex-direction: row !important;     /* force side-by-side */
+    flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 12px !important;
-    padding: 0 5vw !important;
-    box-sizing: border-box !important;
+    gap: 10px !important;
   }
 
   .hero-image {
-    width: 36% !important;              /* smaller, proportional image */
+    width: 40% !important;
     max-width: 150px !important;
-    height: auto !important;
-    object-fit: contain !important;
-    margin: 0 !important;
-    display: block !important;
   }
 
   .hero-title {
-    width: 60% !important;              /* takes remaining space */
-    font-size: 24px !important;         /* slightly larger but fits */
+    width: 50% !important;
+    font-size: 26px !important;    /* slightly larger */
     line-height: 1.15 !important;
-    text-align: left !important;        /* keep desktop alignment */
-    color: #fff !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    word-break: break-word !important;
-  }
-
-  /* ART SECTION — make the title smaller and centered on mobile */
-  .art-section h2 {
-    font-size: 1.5rem !important;       /* smaller title */
-    margin-bottom: 10px !important;
     text-align: center !important;
   }
 
-  /* ABOUT SECTION — enforce order: title -> paragraph -> image (image BELOW paragraph) */
-  .about-section .section-content {
-    display: flex !important;
+
+  /* --- ART SECTION: make title smaller --- */
+  .art-section h2 {
+    font-size: 1.3rem !important;
+    text-align: center !important;
+  }
+
+
+  /* --- ABOUT SECTION: image below text --- */
+  .about-section {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 16px !important;
     text-align: center !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
   }
 
-  .about-section .text-col { order: 1 !important; width: 100% !important; }
-  .about-section .text-col h2 { order: 1 !important; }
-  .about-section .text-col p  { order: 2 !important; }
-
-  .about-section .img-col  { order: 3 !important; width: 100% !important; }
-  .about-section .img-col img {
+  .about-section .img-col {
     order: 3 !important;
-    width: 92% !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-section .text-col {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  .about-section h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .about-section p {
+    font-size: 1.05rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .about-section img {
+    width: 90% !important;
     max-width: 420px !important;
-    display: block !important;
-    margin: 0 auto !important;
-    border-radius: 10px !important;
-    height: auto !important;
-    object-fit: cover !important;
+    border-radius: 10px;
+    margin-top: 10px;
   }
 }
