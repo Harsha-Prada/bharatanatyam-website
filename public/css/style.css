@@ -210,81 +210,92 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
   .counter-number .count{font-size:40px}
   .img-col img{max-width:280px}
 }
-/* ---------------- MOBILE FIXES ONLY ---------------- */
-@media (max-width: 768px) {
+/* ---------- FORCE HERO SIDE-BY-SIDE ON MOBILE + ABOUT IMAGE BELOW PARA ---------- */
+/* Place this at the BOTTOM of style.css so it overrides previous mobile rules */
 
-  /* Fix the entire page width problem */
-  body, html {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-}
-
-/* ---------- MOBILE HERO & TWO-COL RESPONSIVE (SMALLEST PHONES) ---------- */
 @media (max-width: 600px) {
 
-  /* HERO */
+  /* Force hero to remain side-by-side (image left, title right) */
   .hero {
-    min-height: 90vh;            /* almost full screen */
-    padding: 20px 12px;
+    padding: 30px 12px;
+    min-height: auto; /* keep it compact if you shortened it earlier */
   }
 
   .hero-inner {
-    flex-direction: row;          /* keep image left, title right */
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+    display: flex !important;
+    flex-direction: row !important;    /* ensure row, not column */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 6vw;
   }
 
+  /* Constrain image so it won't overflow or get cropped */
   .hero-image {
-    width: 40%;                   /* scale image */
-    max-width: 180px;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .hero-title {
-    width: 50%;                   /* title takes remaining space */
-    font-size: 22px;              /* scaled font */
-    line-height: 1.2;
-    text-align: left;
-    color: #fff;
-  }
-
-  /* ---------------- ART + ABOUT SECTIONS ---------------- */
-
-  .section {
-    padding: 40px 20px;
-    text-align: center;   /* center heading + paragraphs */
-  }
-
-  .section h2 {
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  .section p {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .section img {
-    width: 90%;
-    max-width: 350px;
+    width: 42% !important;             /* image occupies ~40% of hero */
+    max-width: 180px !important;       /* caps on larger phones */
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 !important;
     display: block;
-    margin: 0 auto;
-    border-radius: 10px;
   }
 
-  /* Any side-by-side layout becomes stacked vertically */
-  .section-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  /* Title takes remaining space and won't be cut off */
+  .hero-title {
+    width: 52% !important;
+    font-size: 20px !important;
+    line-height: 1.18 !important;
+    text-align: left !important;      /* keep left-aligned like desktop */
+    color: #fff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    word-break: break-word;
+  }
+
+  /* If any earlier rule forced stacking via these classes, override them */
+  .hero-inner > * { flex-shrink: 0; }
+
+  /* ---------------- ABOUT SECTION: image BELOW paragraph ---------------- */
+  /* Use order so text comes first, image comes after (stacked vertically) */
+  .about-section .section-content {
+    display: flex !important;
+    flex-direction: column !important; /* vertical stack: text then image */
+    align-items: center !important;
+    gap: 18px !important;
+    padding: 0 6vw;
+    box-sizing: border-box;
+  }
+
+  /* Ensure text column appears before image */
+  .about-section .text-col { order: 1 !important; width: 100%; }
+  .about-section .img-col  { order: 2 !important; width: 100%; }
+
+  /* Make the about image larger and centered under the paragraph */
+  .about-section .img-col img {
+    width: 92% !important;
+    max-width: 420px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 8px;
+  }
+
+  /* small niceties for headings & paragraphs */
+  .about-section .text-col h2,
+  .about-section .text-col p {
+    text-align: center !important;
+  }
+
+  .about-section .text-col h2 {
+    font-size: 1.35rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .about-section .text-col p {
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
   }
 }
