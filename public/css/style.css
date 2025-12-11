@@ -211,38 +211,43 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
   .img-col img{max-width:280px}
 }
 /* ---------- FINAL MOBILE FIXES (max-width: 600px) ---------- */
-/* ---------- HERO SECTION MOBILE ADJUSTMENTS (max-width: 600px) ---------- */
+/* ---------- HERO SECTION MOBILE FINAL TIGHTENED ---------- */
 @media (max-width: 600px) {
 
   .hero {
-    min-height: 28vh !important;      /* even shorter hero */
-    padding-top: 2px !important;      /* reduced top padding */
-    padding-bottom: 2.5px !important;   /* reduced bottom padding */
+    min-height: auto !important;       /* remove min-height */
+    height: auto !important;           /* allow content to define height */
+    padding-top: 5px !important;       /* minimal top padding */
+    padding-bottom: 5px !important;    /* minimal bottom padding */
+    display: flex;
+    align-items: center;               /* vertically center the inner content */
+    justify-content: flex-start;
   }
 
   .hero-inner {
-    flex-direction: row !important;    /* image left, title right */
-    align-items: center !important;    /* vertical centering */
+    flex-direction: row !important;    
+    align-items: center !important;    /* vertical center inside hero */
     justify-content: flex-start !important;
-    gap: 12px !important;
+    gap: 10px !important;
     width: 100%;
   }
 
   .hero-image {
-    width: 35% !important;             /* image size */
-    max-width: 130px !important;
+    width: 35% !important;
+    max-width: 120px !important;       /* smaller image to reduce hero height */
     height: auto !important;
     object-fit: contain !important;
   }
 
   .hero-title {
     width: 60% !important;
-    font-size: 24px !important;
-    line-height: 1.2 !important;
+    font-size: 22px !important;        /* slightly smaller to reduce height */
+    line-height: 1.1 !important;
     text-align: left !important;
-    white-space: normal !important;   /* allow natural wrapping */
     margin: 0 !important;
+    white-space: normal !important;    
   }
+
 
 
   /* --- ART + ABOUT TITLES LEFT ALIGNED --- */
