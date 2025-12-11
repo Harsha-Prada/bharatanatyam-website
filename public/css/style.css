@@ -220,35 +220,37 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
     padding: 0;
     overflow-x: hidden;
   }
+}
 
-  /* HERO SECTION — identical to desktop but scaled */
+/* ---------- MOBILE HERO & TWO-COL RESPONSIVE (SMALLEST PHONES) ---------- */
+@media (max-width: 600px) {
+
+  /* HERO */
   .hero {
-    height: auto; 
-    padding: 60px 0; /* equal top-bottom padding like desktop */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    min-height: 90vh;            /* almost full screen */
+    padding: 20px 12px;
   }
 
   .hero-inner {
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
+    flex-direction: row;          /* keep image left, title right */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
   }
 
   .hero-image {
-    width: 70%;          /* proportional to desktop look */
-    max-width: 260px;     /* ensures it doesn’t blow up */
+    width: 40%;                   /* scale image */
+    max-width: 180px;
     height: auto;
-    margin: 0 auto;
+    object-fit: contain;
   }
 
   .hero-title {
-    font-size: 1.9rem;     /* visually equal to desktop scale */
-    text-align: center;
-    margin-top: 15px;
-    line-height: 1.3;
+    width: 50%;                   /* title takes remaining space */
+    font-size: 22px;              /* scaled font */
+    line-height: 1.2;
+    text-align: left;
+    color: #fff;
   }
 
   /* ---------------- ART + ABOUT SECTIONS ---------------- */
