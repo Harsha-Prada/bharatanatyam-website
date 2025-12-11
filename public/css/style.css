@@ -210,67 +210,108 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
   .counter-number .count{font-size:40px}
   .img-col img{max-width:280px}
 }
-/* ---------- MOBILE LAYOUT FIXES (side-by-side scaling) ---------- */
+/* ---------- MOBILE HERO & TWO-COL RESPONSIVE ---------- */
 @media (max-width: 600px) {
-  
-  /* HERO SECTION */
+
+  /* HERO */
   .hero {
-    min-height: 90vh;            /* fill most of the screen vertically */
-    padding: 20px 12px;          /* tighter padding for mobile */
+    min-height: 90vh;            /* almost full screen */
+    padding: 20px 12px;
   }
 
   .hero-inner {
-    flex-direction: column;      /* stack image + title */
+    flex-direction: row;          /* keep image left, title right */
     align-items: center;
-    justify-content: center;     /* vertical centering */
-    gap: 16px;
+    justify-content: center;
+    gap: 12px;
   }
 
   .hero-image {
-    width: 70%;                  /* scale image down */
-    max-width: 240px;
+    width: 40%;                   /* scale image */
+    max-width: 180px;
     height: auto;
     object-fit: contain;
-    display: block;
-    margin: 0 auto;              /* center image */
   }
 
   .hero-title {
-    text-align: center;
-    font-size: 28px;             /* scale title down */
+    width: 50%;                   /* title takes remaining space */
+    font-size: 22px;              /* scaled font */
     line-height: 1.2;
+    text-align: left;
+    color: #fff;
   }
 
-  /* TWO-COL SECTIONS (Art, About) */
+  /* TWO-COL SECTIONS (Art/About) */
   .two-col {
     display: flex;
-    flex-direction: row;          /* keep side-by-side */
+    flex-wrap: nowrap;             /* prevent stacking */
     align-items: center;
     justify-content: center;
-    gap: 12px;                    /* spacing between image and text */
+    gap: 12px;
   }
 
   .col {
-    flex: 1 1 50%;                /* each column takes half width, can shrink */
+    flex: 1 1 45%;                 /* roughly same proportion as desktop */
+    min-width: 140px;
   }
 
   .img-col img {
-    width: 100%;                  /* fill column width */
-    max-width: 140px;             /* scale down for mobile */
+    width: 100%;
     height: auto;
+    max-width: 180px;
+    object-fit: contain;
+    border-radius: 6px;
   }
 
   .text-col h2 {
-    font-size: 20px;              /* scale heading */
+    font-size: 20px;
   }
 
   .text-col p {
-    font-size: 14px;              /* scale paragraph */
+    font-size: 14px;
     line-height: 1.5;
   }
 
   /* COUNTERS */
   .counters {
-    gap: 20px;                    /* tighter spacing for mobile */
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .counter-item {
+    min-width: 120px;
+  }
+
+  .counter-number {
+    font-size: 36px;
+  }
+
+  .counter-number .count {
+    font-size: 40px;
+  }
+
+  .counter-number .plus {
+    font-size: 20px;
+  }
+
+  .counter-sub {
+    font-size: 13px;
+  }
+
+  /* POINTS */
+  .points {
+    font-size: 16px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .points li {
+    padding: 8px 0;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    padding: 30px 12px;
   }
 }
