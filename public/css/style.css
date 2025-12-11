@@ -213,6 +213,7 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
 /* ---------------- MOBILE FIXES ONLY ---------------- */
 @media (max-width: 768px) {
 
+  /* Fix the entire page width problem */
   body, html {
     width: 100%;
     margin: 0;
@@ -220,69 +221,68 @@ html,body{height:100%;margin:0;font-family:Roboto,system-ui,-apple-system,Segoe 
     overflow-x: hidden;
   }
 
-  /* HERO SECTION — shortened vertically */
+  /* HERO SECTION — identical to desktop but scaled */
   .hero {
-    padding: 35px 0;   /* was 60px — now shorter */
+    height: auto; 
+    padding: 60px 0; /* equal top-bottom padding like desktop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-inner {
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     width: 100%;
   }
 
   .hero-image {
-    width: 65%;          
-    max-width: 240px;    /* slightly smaller */
+    width: 70%;          /* proportional to desktop look */
+    max-width: 260px;     /* ensures it doesn’t blow up */
     height: auto;
     margin: 0 auto;
   }
 
   .hero-title {
-    font-size: 1.85rem;   /* slightly smaller */
+    font-size: 1.9rem;     /* visually equal to desktop scale */
     text-align: center;
-    margin-top: 10px;
-    line-height: 1.25;
+    margin-top: 15px;
+    line-height: 1.3;
   }
 
   /* ---------------- ART + ABOUT SECTIONS ---------------- */
 
   .section {
-    padding: 45px 22px;
-    text-align: center;
+    padding: 40px 20px;
+    text-align: center;   /* center heading + paragraphs */
   }
 
   .section h2 {
     text-align: center;
-    font-size: 1.45rem;      /* bigger heading */
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   .section p {
     text-align: center;
-    margin-bottom: 22px;
-    font-size: 1.08rem;      /* bigger paragraph */
-    line-height: 1.55;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .section img {
-    width: 95%;              /* larger images */
-    max-width: 420px;        /* increased from 350px */
+    width: 90%;
+    max-width: 350px;
     display: block;
     margin: 0 auto;
     border-radius: 10px;
   }
 
-  /* Stacked layout */
+  /* Any side-by-side layout becomes stacked vertically */
   .section-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 22px;
-  }
-
-  /* About section: place image under paragraph */
-  .about-section .section-content {
-    flex-direction: column-reverse; /* image BELOW text */
+    gap: 20px;
   }
 }
